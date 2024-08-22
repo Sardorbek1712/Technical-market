@@ -8,7 +8,6 @@ class CategoryController {
 
     //This method create new Category and returuns created category...
     async createCategory(req,res) {
-        console.log("kirildi")
         try{
             const category = await Category.create(req.body)
             
