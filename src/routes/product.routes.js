@@ -8,3 +8,4 @@ productRoutes
     .get("/all",productController.getAllProducts)
     .get("/:productId",productController.getProductById)
     .put("/update/:productId",productController.updateProductById)
+    .delete("/delete/:productId",productController.deleteProductById)

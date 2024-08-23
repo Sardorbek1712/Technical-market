@@ -2,13 +2,12 @@ import { isValidObjectId } from "mongoose"
 import { CustomException } from "../utils/customException.js"
 import { Category } from "../models/category.js"
 import { Product } from "../models/product.js"
-import {PAGE,LIMIT,SORT} from "../constants/product.constants.js"
+import {LIMIT,PAGE,SORT} from "../constants/product.constants.js"
 
 class ProductController{
     constructor() { }
 
 // Create product
-
     async createProduct(req,res){
 
         try{
@@ -38,6 +37,7 @@ class ProductController{
         }
     }
 
+// Get all product
     async getAllProducts(req,res){
         try{
             let query = { ...req.query }
@@ -45,7 +45,7 @@ class ProductController{
             let limit = req.query?.limit || LIMIT
             let sort = req.query?.sort || SORT
 
-            const excludedQueries = ['page','limit','sort']
+            const excludedQueries = ['page', 'limit', 'sort']
 
             excludedQueries.map(eq => delete query[eq])
 
@@ -60,20 +60,21 @@ class ProductController{
                 .limit(limit)
                 .sort(`${sort}`)
 
-                res.send({
-                    message: "Got all products",
-                    count: products.length,
-                    page,limit,sort,
-                    data: products
-                })
-        }catch(error){
-            res.status(404).send({
-                message: "Products not found",
-                error:error
+            res.send({
+                message: 'Ok',
+                count: products.length,
+                page, limit, sort,
+                data: products
             })
-        }
+  } catch (error) {
+    res.status(404).send({
+        message: "Products Not Found",
+        error:error
+    })
+  }    
     }
-// 
+
+// Get product by ID
     async getProductById(req,res){
 
         try{
@@ -92,7 +93,8 @@ class ProductController{
             })
         }
     }
-// Update product By Id
+
+// Update product By ID
     async updateProductById(req,res){
 
         try{
@@ -102,7 +104,7 @@ class ProductController{
                 { overwriteDiscriminatorKey:true, new: true }
             );
 
-            if(updatedProduct) throw new CustomException(404,"Product not found")
+            if(!updatedProduct) throw new CustomException(404,"Product not found")
 
             res.status(200).send({
                 message: "Product updated successfully",
@@ -115,9 +117,25 @@ class ProductController{
             })
         }
     }
+    
+    // Delete Product by ID
+    async deleteProductById(req,res){
 
+        try{
+            const deletedProduct = await Product.findByIdAndDelete(req.params.productId)
+            if(!deletedProduct) throw new CustomException(404,"Product Not Found")
 
-
+            res.status(200).send({
+                message: "Product Deleted successfully",
+                data: deletedProduct
+            })
+        }catch(error){
+            res.status(404).send({
+                message: "Product not deleted",
+                error: error
+            })
+        }
+    }
 }
 
 export default new ProductController
