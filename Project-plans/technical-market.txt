@@ -1,0 +1,57 @@
+Technical market => For Businessmen
+
+Authentification:
+    login: email.com
+    password: String
+
+Texnika Dokoni (modellari):
+    User
+    Product
+    Category
+    Seller
+    Selled Products
+    Admin
+    Superadmin
+
+User model :
+    id: number
+    FullName: String
+    email: String
+    password: String
+    phone: String
+    created_at: String
+
+
+Category: 
+    id: number
+    name: String
+    products: Product[]
+
+
+Product model: 
+    id: number
+    name: String
+    price: number
+    count: number
+    category: category_id
+
+SelledProduct:
+    id: number
+    name: String
+    count: number
+    selled-price: number
+    selled-by: Seller
+
+Admin model: 
+    id: number
+    FullName:: String
+    email: String
+    password: String
+    phone: String
+    created_at: Datetime
+    users: User[]
+    role: String
+
+    
+
+

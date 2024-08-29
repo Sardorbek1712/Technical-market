@@ -117,8 +117,8 @@ class ProductController{
             })
         }
     }
-    
-    // Delete Product by ID
+
+// Delete Product by ID
     async deleteProductById(req,res){
 
         try{

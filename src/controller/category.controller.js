@@ -24,7 +24,8 @@ class CategoryController {
             })
         }
     }
-// GETTING ALL CATEGORIES...
+
+    // GETTING ALL CATEGORIES...
 
     async getAllCategories(req,res){
         try{
@@ -93,7 +94,6 @@ class CategoryController {
     }
     
     // Delete Category By Id
-
     async deleteCategoryById(req,res){
         try{
             const deletedCategory = await Category.findByIdAndDelete(req.params.categoryId)

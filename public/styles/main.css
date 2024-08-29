@@ -1,0 +1,193 @@
+/* Navbar and main page */
+*{
+  scroll-behavior: smooth;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+
+.top-bar {
+  background-color: #1a1a2e;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-bar .breadcrumb {
+  color: #fff;
+  text-decoration: none;
+}
+
+.top-bar-right {
+  display: flex;
+  align-items: center;
+}
+
+.top-bar-right span {
+  margin-right: 20px;
+}
+
+.cart-btn {
+  background-color: #00b894;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.header {
+  background-color: #2f3640;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  z-index: 1000;
+  top: 0;
+}
+
+.header .logo h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.header .logo p {
+  margin: 0;
+  font-size: 14px;
+  color: #bdc3c7;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 16px;
+}
+
+.nav a:hover {
+  color: #fbc531;
+  transition: 0.5s;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar input {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  width: 300px;
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  background-color: #fbc531;
+  color: #fff;
+  cursor: pointer;
+}
+
+.categories {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: #f5f6fa;
+}
+
+.category-item {
+  text-align: center;
+}
+
+.category-item img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  transition: transform 0.8s ease-in-out;
+  cursor: pointer;
+}
+
+.category-item img:hover{
+  transform:rotate(360deg)
+}
+
+.category-item span {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.category-item span:hover{
+  color: #fbc531;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.sale-banner {
+  background-color: #fbc531;
+  color: #000;
+  text-align: center;
+  padding: 138px 20px;
+}
+
+.sale-banner h2 {
+  font-size: 36px;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.sale-banner p {
+  font-size: 18px;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.sale-banner .price {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.banner-text{
+  display: flex;
+  flex-direction: column;
+}
+
+.sale-banner{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-around;
+}
+.sale-banner .anounce{
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+.sale-banner .anouncer-svg{
+  height: 200px;
+  width: 200px;
+}
+.sale-banner del {
+  color: #bdc3c7;
+  margin-left: 10px;
+}
+
+.cart-svg {
+  color: white;
+}
+
+/* Section part ABOUT */
+
+
