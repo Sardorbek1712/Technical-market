@@ -4,7 +4,8 @@ import bodyParser from "body-parser"
 import morgan from "morgan";
 import { mongoDB } from "./mongo/mongo.js";
 import { appConfig } from "./config/app.config.js";
-import { routes } from "./routes/index.js";
+import { routes } from "./routes/index.routes.js";
+import { router } from "./routes/views.routes.js";
 
 
 const app = express()
@@ -31,6 +32,7 @@ mongoDB()
   .catch((err) => console.log(err));
 
 app.use("/api/v1",routes)
+app.use("/",router)
 
 
 app.listen(appConfig.port , appConfig.host, () => {
